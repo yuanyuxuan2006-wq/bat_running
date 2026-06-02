@@ -1,6 +1,6 @@
 # Bat Running
 
-A 2D parkour game about a little bat, built with Scratch and packaged to HTML using TurboWarp.
+A 2D parkour game about a little bat, built with Javasript and packaged to HTML using Cocos.
 
 ## Project Overview
 
@@ -12,12 +12,12 @@ Bat Running is a simple 2D side-scrolling parkour game. The player controls a ba
 - Character movement and jumping
 - Obstacle avoidance
 - Start, game over, and restart logic
-- Packaged as an HTML game using TurboWarp
+- Packaged as an HTML game using Cocos
 
 ## Technologies Used
 
-- Scratch
-- TurboWarp
+- Javascript
+- Cocos
 - HTML
 
 ## How to Play
