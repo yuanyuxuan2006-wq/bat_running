@@ -2,8 +2,6 @@
 
 A 2D arcade game written in plain JavaScript and HTML5 Canvas. Fly a bat around the stage, collect items for points, and dodge traps that get harder as your score rises.
 
-Originally prototyped in Scratch, then rewritten in JavaScript.
-
 ## How to play
 
 | Key | Action |
@@ -36,7 +34,6 @@ js/assets.js     loads images and sounds before the game starts
 js/sprites.js    Sprite class (drawing, animation, hit boxes) and script helpers
 js/game.js       Game class: input, game loop, scoring, levels, traps, HUD
 assets/          backdrops, sprite frames and sounds
-scratch-prototype/  the original Scratch version, exported to HTML
 ```
 
 Each sprite's behaviour is a JavaScript generator function, for example "glide to a random point over 5 seconds, then wait 2 seconds". The game loop advances every generator once per frame with the elapsed time, so timed behaviours read as simple step-by-step code instead of nested timers.

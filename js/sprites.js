@@ -64,7 +64,7 @@ class Sprite {
   }
 
   /**
-   * Pixel-perfect collision, like Scratch's "touching" block: first check that
+   * Pixel-perfect collision: first check that
    * the boxes overlap, then look for a stage point that is solid in both images.
    */
   touches(other) {
