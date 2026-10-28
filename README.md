@@ -13,7 +13,7 @@ Originally prototyped in Scratch, then rewritten in JavaScript.
 | R | Play again after game over |
 
 - Ball: +10 points. Butterfly: +20 points. Each item respawns somewhere new after 3 seconds.
-- You gain 1 point and 1 distance every second.
+- You gain 1 point every second, and the timer shows how long you have survived.
 - You have 5 HP. Touching a saw, lightning trap or broom costs 1 HP, followed by 3 seconds of invincibility.
 - Levels 2, 3 and 4 unlock at 100, 300 and 600 points, each with a new backdrop and a score bonus.
 - Traps scale with your score: the lightning trap grows, a second one appears at 300, the saw grows and starts sliding along the ceiling, and a broom sweeps across every ten seconds.

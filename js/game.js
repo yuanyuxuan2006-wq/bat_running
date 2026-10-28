@@ -13,6 +13,13 @@ const LEVELS = [
   { score: 600, bonus: 180, message: 'Unbelievable, level 4!' },
 ];
 
+/** Formats seconds as m:ss, e.g. 75 -> "1:15". */
+function formatTime(seconds) {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
+
 class Game {
   constructor(canvas, assets) {
     this.ctx = canvas.getContext('2d');
@@ -48,7 +55,7 @@ class Game {
     const img = this.assets.images;
 
     this.score = 0;
-    this.distance = 0;
+    this.time = 0;                // seconds survived
     this.hp = START_HP;
     this.level = 1;
     this.invincible = 0;
@@ -85,7 +92,7 @@ class Game {
     while (true) {
       yield* wait(1);
       this.score += 1;
-      this.distance += 1;
+      this.time += 1;
     }
   }
 
@@ -280,7 +287,7 @@ class Game {
     if (this.state === 'start') {
       this.drawOverlay('Bat Running', 'WASD / arrow keys to fly · click or press Space to start');
     } else if (this.state === 'over') {
-      this.drawOverlay('Game Over', `Score ${this.score} · Distance ${this.distance} · press R to play again`);
+      this.drawOverlay('Game Over', `Score ${this.score} · Time ${formatTime(this.time)} · press R to play again`);
     }
   }
 
@@ -293,7 +300,7 @@ class Game {
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
     ctx.fillText(`Score: ${this.score}`, 14, 12);
-    ctx.fillText(`Distance: ${this.distance}   Level ${this.level}`, 14, 28);
+    ctx.fillText(`Time: ${formatTime(this.time)}   Level ${this.level}`, 14, 28);
     ctx.fillStyle = '#ff5b6e';
     ctx.fillText('♥'.repeat(Math.max(0, this.hp)) + '♡'.repeat(START_HP - Math.max(0, this.hp)), 14, 44);
   }
